@@ -1,6 +1,6 @@
 name: 'general_schema'
 description: 'General Schema is library for styling your schema for all project language for help you get best perfect style '
-version: '0.0.0'
+version: '0.0.1'
 funding:
   - 'https://github.com/sponsors/generalcorporation'
   - 'https://github.com/sponsors/azkadev'
