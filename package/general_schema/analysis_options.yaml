@@ -1,0 +1,11 @@
+include: package:lints/recommended.yaml
+analyzer:
+  exclude:
+    - test
+    - dev
+    - templates
+  errors:
+    todo: ignore
+linter:
+  rules:
+    - public_member_api_docs
