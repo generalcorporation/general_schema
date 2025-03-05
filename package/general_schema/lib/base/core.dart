@@ -35,13 +35,13 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 import 'dart:async';
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-abstract class GeneralSchemaRequestBaseCore {}
+class GeneralSchemaRequestBaseCore {}
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-abstract class GeneralSchemaResponseBaseCore {}
+class GeneralSchemaResponseBaseCore {}
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-abstract class GeneralSchemaEnsureInitializedBaseCore
+class GeneralSchemaEnsureInitializedBaseCore
     extends GeneralSchemaRequestBaseCore {}
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
