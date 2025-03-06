@@ -51,7 +51,7 @@ abstract class GeneralSchemaClientOnly<
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final AGeneralSchemaRequestDefaultValue requestDefault;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final AGeneralSchemaApiValue generalSchemaApi;
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
@@ -79,7 +79,7 @@ abstract class GeneralSchemaClient<
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final AGeneralSchemaRequestDefaultValue requestDefault;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final AGeneralSchemaApiValue generalSchemaApi;
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
