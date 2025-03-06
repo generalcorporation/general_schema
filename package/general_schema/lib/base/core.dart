@@ -35,16 +35,6 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 import 'dart:async';
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-class GeneralSchemaRequestBaseCore {}
-
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-class GeneralSchemaResponseBaseCore {}
-
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-class GeneralSchemaEnsureInitializedBaseCore
-    extends GeneralSchemaRequestBaseCore {}
-
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 enum GeneralSchemaDeviceStatusSupportType {
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   support(
@@ -103,11 +93,11 @@ enum GeneralSchemaLibraryStatusType {
 }
 
 /// GeneralLib
-abstract class GeneralSchemaBaseCore<
-    AGeneralSchemaEnsureInitializedValue extends GeneralSchemaEnsureInitializedBaseCore> {
+abstract class GeneralSchemaBaseCore<AGeneralSchemaEnsureInitializedValue> {
   /// GeneralLib
   FutureOr<void> ensureInitialized({
-    required AGeneralSchemaEnsureInitializedValue? generalSchemaRequest,
+    required AGeneralSchemaEnsureInitializedValue
+        generalSchemaEnsureInitialized,
   });
 
   /// GeneralLib
@@ -134,10 +124,7 @@ abstract class GeneralSchemaBaseCore<
 
   /// GeneralLib
   FutureOr<void> dispose();
-}
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-extension GeneralSchemaBaseCoreExtensionBaseCore on GeneralSchemaBaseCore {
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   FutureOr<T> valueBuilderAsync<T extends Object?>({
     required FutureOr<T> Function() onValueBuilder,
@@ -172,29 +159,67 @@ extension GeneralSchemaBaseCoreExtensionBaseCore on GeneralSchemaBaseCore {
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+// extension GeneralSchemaBaseCoreExtensionBaseCore on GeneralSchemaBaseCore {
+
+//   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+//   FutureOr<T> valueBuilderAsync<T extends Object?>({
+//     required FutureOr<T> Function() onValueBuilder,
+//     required FutureOr<T> Function(dynamic error, StackTrace stackTrace) onErrorValueBuilder,
+//   }) async {
+//     try {
+//       return await onValueBuilder();
+//     } catch (error, stackTrace) {
+//       return await onErrorValueBuilder(
+//         error,
+//         stackTrace,
+//       );
+//     }
+//   }
+
+//   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+//   T valueBuilderSync<T extends Object?>({
+//     required T Function() onValueBuilder,
+//     required T Function(dynamic error, StackTrace stackTrace) onErrorValueBuilder,
+//   }) {
+//     try {
+//       return onValueBuilder();
+//     } catch (error, stackTrace) {
+//       return onErrorValueBuilder(
+//         error,
+//         stackTrace,
+//       );
+//     }
+//   }
+// }
+
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract mixin class GeneralSchemaInvokeRequestBaseCore<
-    AGeneralSchemaResponseValue extends GeneralSchemaResponseBaseCore,
-    AGeneralSchemaRequestValue extends GeneralSchemaRequestBaseCore> {
+    AGeneralSchemaInvokeValue, AGeneralSchemaInvokeValueOptions> {
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  FutureOr<AGeneralSchemaResponseValue> invokeRaw({
-    required AGeneralSchemaRequestValue parameters,
+  FutureOr<AGeneralSchemaInvokeValue> invokeRaw({
+    required AGeneralSchemaInvokeValue invokeParameters,
+    required AGeneralSchemaInvokeValueOptions? invokeOptions,
   });
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  FutureOr<AGeneralSchemaResponseValue> invoke({
-    required AGeneralSchemaRequestValue parameters,
+  FutureOr<AGeneralSchemaInvokeValue> invoke({
+    required AGeneralSchemaInvokeValue invokeParameters,
+    required AGeneralSchemaInvokeValueOptions? invokeOptions,
   }) async {
     return await invokeRaw(
-      parameters: parameters,
+      invokeParameters: invokeParameters,
+      invokeOptions: invokeOptions,
     );
   }
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  FutureOr<AGeneralSchemaResponseValue> request({
-    required AGeneralSchemaRequestValue parameters,
+  FutureOr<AGeneralSchemaInvokeValue> request({
+    required AGeneralSchemaInvokeValue invokeParameters,
+    required AGeneralSchemaInvokeValueOptions? invokeOptions,
   }) async {
     return await invoke(
-      parameters: parameters,
+      invokeParameters: invokeParameters,
+      invokeOptions: invokeOptions,
     );
   }
 }

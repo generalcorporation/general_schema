@@ -36,5 +36,6 @@ import 'package:general_schema/base/base.dart';
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract class GeneralSchemaDatabase<
-        AGeneralSchemaEnsureInitializedValue extends GeneralSchemaEnsureInitializedBaseCore>
-    extends GeneralSchemaBaseCore<AGeneralSchemaEnsureInitializedValue> {}
+        AGeneralSchemaDatabaseEnsureInitializedValue>
+    extends GeneralSchemaBaseCore<
+        AGeneralSchemaDatabaseEnsureInitializedValue> {}

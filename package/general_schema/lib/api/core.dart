@@ -37,11 +37,18 @@ import 'package:general_schema/database/database.dart';
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract class GeneralSchemaApi<
-        AGeneralSchemaEnsureInitializedValue extends GeneralSchemaEnsureInitializedBaseCore,
-        AGeneralSchemaResponseValue extends GeneralSchemaResponseBaseCore,
+        AGeneralSchemaEnsureInitializedValue,
         AGeneralSchemaDatabaseValue extends GeneralSchemaDatabase,
-        AGeneralSchemaRequestValue extends GeneralSchemaRequestBaseCore>
+        AGeneralSchemaInvokeValue,
+        AGeneralSchemaInvokeValueOptions>
     extends GeneralSchemaBaseCore<AGeneralSchemaEnsureInitializedValue>
     with
-        GeneralSchemaInvokeRequestBaseCore<AGeneralSchemaResponseValue,
-            AGeneralSchemaRequestValue> {}
+        GeneralSchemaInvokeRequestBaseCore<AGeneralSchemaInvokeValue,
+            AGeneralSchemaInvokeValueOptions> {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  final AGeneralSchemaDatabaseValue generalSchemaDatabase;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  GeneralSchemaApi({
+    required this.generalSchemaDatabase,
+  });
+}

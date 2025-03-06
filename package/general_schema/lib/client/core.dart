@@ -32,48 +32,60 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 
 <!-- END LICENSE --> */
+import 'package:general_schema/api/api.dart';
 import 'package:general_schema/base/base.dart';
 import 'package:general_schema/database/database.dart';
+// import 'package:general_schema/general_schema.dart';
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract class GeneralSchemaClientOnly<
-        AGeneralSchemaEnsureInitializedValue extends GeneralSchemaEnsureInitializedBaseCore,
-        AGeneralSchemaResponseValue extends GeneralSchemaResponseBaseCore,
-        AGeneralSchemaRequestValue extends GeneralSchemaRequestBaseCore,
-        AGeneralSchemaRequestDefaultValue extends GeneralSchemaRequestBaseCore>
+        AGeneralSchemaEnsureInitializedValue,
+        AGeneralSchemaInvokeValue,
+        AGeneralSchemaInvokeValueOptions,
+        AGeneralSchemaRequestDefaultValue,
+        AGeneralSchemaApiValue extends GeneralSchemaApi>
     extends GeneralSchemaBaseCore<AGeneralSchemaEnsureInitializedValue>
     with
-        GeneralSchemaInvokeRequestBaseCore<AGeneralSchemaResponseValue,
-            AGeneralSchemaRequestValue> {
+        GeneralSchemaInvokeRequestBaseCore<AGeneralSchemaInvokeValue,
+            AGeneralSchemaInvokeValueOptions> {
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final AGeneralSchemaRequestDefaultValue requestDefault;
+
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  final AGeneralSchemaApiValue generalSchemaApi;
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   GeneralSchemaClientOnly({
     required this.requestDefault,
+    required this.generalSchemaApi,
   });
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract class GeneralSchemaClient<
-        AGeneralSchemaEnsureInitializedValue extends GeneralSchemaEnsureInitializedBaseCore,
-        AGeneralSchemaResponseValue extends GeneralSchemaResponseBaseCore,
+        AGeneralSchemaEnsureInitializedValue,
+        AGeneralSchemaInvokeValue,
+        AGeneralSchemaInvokeValueOptions,
+        AGeneralSchemaRequestDefaultValue,
         AGeneralSchemaDatabaseValue extends GeneralSchemaDatabase,
-        AGeneralSchemaRequestValue extends GeneralSchemaRequestBaseCore,
-        AGeneralSchemaRequestDefaultValue extends GeneralSchemaRequestBaseCore>
+        AGeneralSchemaApiValue extends GeneralSchemaApi>
     extends GeneralSchemaBaseCore<AGeneralSchemaEnsureInitializedValue>
     with
-        GeneralSchemaInvokeRequestBaseCore<AGeneralSchemaResponseValue,
-            AGeneralSchemaRequestValue> {
+        GeneralSchemaInvokeRequestBaseCore<AGeneralSchemaInvokeValue,
+            AGeneralSchemaInvokeValueOptions> {
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  final AGeneralSchemaDatabaseValue database;
+  final AGeneralSchemaDatabaseValue generalSchemaDatabase;
 
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final AGeneralSchemaRequestDefaultValue requestDefault;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  final AGeneralSchemaApiValue generalSchemaApi;
+
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   GeneralSchemaClient({
-    required this.database,
+    required this.generalSchemaDatabase,
     required this.requestDefault,
+    required this.generalSchemaApi,
   });
 }

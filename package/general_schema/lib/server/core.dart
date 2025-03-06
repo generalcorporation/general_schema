@@ -33,14 +33,16 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 <!-- END LICENSE --> */
 import 'package:general_schema/base/core.dart';
+import 'package:general_schema/general_schema.dart';
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-abstract class GeneralSchemaServer<
-        AGeneralSchemaEnsureInitializedValue extends GeneralSchemaEnsureInitializedBaseCore,
-        AGeneralSchemaResponseValue extends GeneralSchemaResponseBaseCore,
-        AGeneralSchemaDatabaseValue extends GeneralSchemaBaseCore,
-        AGeneralSchemaRequestValue extends GeneralSchemaRequestBaseCore>
-    extends GeneralSchemaBaseCore<AGeneralSchemaEnsureInitializedValue>
-    with
-        GeneralSchemaInvokeRequestBaseCore<AGeneralSchemaResponseValue,
-            AGeneralSchemaRequestValue> {}
+abstract class GeneralSchemaServer<AGeneralSchemaEnsureInitializedValue,
+        AGeneralSchemaApiValue extends GeneralSchemaApi>
+    extends GeneralSchemaBaseCore<AGeneralSchemaEnsureInitializedValue> {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  final AGeneralSchemaApiValue generalSchemaApi;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  GeneralSchemaServer({
+    required this.generalSchemaApi,
+  });
+}
