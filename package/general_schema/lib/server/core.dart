@@ -32,6 +32,8 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 
 <!-- END LICENSE --> */
+import 'dart:async';
+
 import 'package:general_schema/base/core.dart';
 import 'package:general_schema/general_schema.dart';
 
@@ -46,4 +48,18 @@ abstract class GeneralSchemaServer<AGeneralSchemaEnsureInitializedValue,
   GeneralSchemaServer({
     required this.generalSchemaApi,
   });
+
+  bool _isEnsureInitialized = false;
+  @override
+  FutureOr<void> ensureInitialized({
+    required AGeneralSchemaEnsureInitializedValue generalSchemaEnsureInitialized,
+  }) async {
+    
+    if (_isEnsureInitialized) {
+      return;
+    }
+    _isEnsureInitialized = true;
+    this.generalSchemaEnsureInitialized = generalSchemaEnsureInitialized;
+    return;
+  }
 }

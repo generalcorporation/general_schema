@@ -94,10 +94,11 @@ enum GeneralSchemaLibraryStatusType {
 
 /// GeneralLib
 abstract class GeneralSchemaBaseCore<AGeneralSchemaEnsureInitializedValue> {
+  late AGeneralSchemaEnsureInitializedValue generalSchemaEnsureInitialized;
+
   /// GeneralLib
   FutureOr<void> ensureInitialized({
-    required AGeneralSchemaEnsureInitializedValue
-        generalSchemaEnsureInitialized,
+    required AGeneralSchemaEnsureInitializedValue generalSchemaEnsureInitialized,
   });
 
   /// GeneralLib
@@ -116,8 +117,7 @@ abstract class GeneralSchemaBaseCore<AGeneralSchemaEnsureInitializedValue> {
   bool isDeviceSupportSync();
 
   /// GeneralLib
-  FutureOr<GeneralSchemaDeviceStatusSupportType>
-      getDetailStatusDeviceSupportAsync();
+  FutureOr<GeneralSchemaDeviceStatusSupportType> getDetailStatusDeviceSupportAsync();
 
   /// GeneralLib
   GeneralSchemaDeviceStatusSupportType getDetailStatusDeviceSupportSync();
@@ -128,8 +128,7 @@ abstract class GeneralSchemaBaseCore<AGeneralSchemaEnsureInitializedValue> {
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   FutureOr<T> valueBuilderAsync<T extends Object?>({
     required FutureOr<T> Function() onValueBuilder,
-    required FutureOr<T> Function(dynamic error, StackTrace stackTrace)
-        onErrorValueBuilder,
+    required FutureOr<T> Function(dynamic error, StackTrace stackTrace) onErrorValueBuilder,
   }) async {
     try {
       return await onValueBuilder();
@@ -144,8 +143,7 @@ abstract class GeneralSchemaBaseCore<AGeneralSchemaEnsureInitializedValue> {
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   T valueBuilderSync<T extends Object?>({
     required T Function() onValueBuilder,
-    required T Function(dynamic error, StackTrace stackTrace)
-        onErrorValueBuilder,
+    required T Function(dynamic error, StackTrace stackTrace) onErrorValueBuilder,
   }) {
     try {
       return onValueBuilder();
@@ -159,42 +157,7 @@ abstract class GeneralSchemaBaseCore<AGeneralSchemaEnsureInitializedValue> {
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-// extension GeneralSchemaBaseCoreExtensionBaseCore on GeneralSchemaBaseCore {
-
-//   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-//   FutureOr<T> valueBuilderAsync<T extends Object?>({
-//     required FutureOr<T> Function() onValueBuilder,
-//     required FutureOr<T> Function(dynamic error, StackTrace stackTrace) onErrorValueBuilder,
-//   }) async {
-//     try {
-//       return await onValueBuilder();
-//     } catch (error, stackTrace) {
-//       return await onErrorValueBuilder(
-//         error,
-//         stackTrace,
-//       );
-//     }
-//   }
-
-//   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-//   T valueBuilderSync<T extends Object?>({
-//     required T Function() onValueBuilder,
-//     required T Function(dynamic error, StackTrace stackTrace) onErrorValueBuilder,
-//   }) {
-//     try {
-//       return onValueBuilder();
-//     } catch (error, stackTrace) {
-//       return onErrorValueBuilder(
-//         error,
-//         stackTrace,
-//       );
-//     }
-//   }
-// }
-
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-abstract mixin class GeneralSchemaInvokeRequestBaseCore<
-    AGeneralSchemaInvokeValue, AGeneralSchemaInvokeValueOptions> {
+abstract mixin class GeneralSchemaInvokeRequestBaseCore<AGeneralSchemaInvokeValue, AGeneralSchemaInvokeValueOptions> {
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   FutureOr<AGeneralSchemaInvokeValue> invokeRaw({
     required AGeneralSchemaInvokeValue invokeParameters,

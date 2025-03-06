@@ -32,10 +32,23 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 
 <!-- END LICENSE --> */
+import 'dart:async';
+
 import 'package:general_schema/base/base.dart';
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-abstract class GeneralSchemaDatabase<
-        AGeneralSchemaDatabaseEnsureInitializedValue>
-    extends GeneralSchemaBaseCore<
-        AGeneralSchemaDatabaseEnsureInitializedValue> {}
+abstract class GeneralSchemaDatabase<AGeneralSchemaDatabaseEnsureInitializedValue> extends GeneralSchemaBaseCore<AGeneralSchemaDatabaseEnsureInitializedValue> {
+  bool _isEnsureInitialized = false;
+  @override
+  FutureOr<void> ensureInitialized({
+    required AGeneralSchemaDatabaseEnsureInitializedValue generalSchemaEnsureInitialized,
+  }) async {
+    if (_isEnsureInitialized) {
+      return;
+    }
+    _isEnsureInitialized = true;
+    this.generalSchemaEnsureInitialized = generalSchemaEnsureInitialized;
+    return;
+  }
+  
+}

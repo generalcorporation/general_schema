@@ -32,22 +32,15 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 
 <!-- END LICENSE --> */
+import 'dart:async';
+
 import 'package:general_schema/api/api.dart';
 import 'package:general_schema/base/base.dart';
 import 'package:general_schema/database/database.dart';
 // import 'package:general_schema/general_schema.dart';
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-abstract class GeneralSchemaClientOnly<
-        AGeneralSchemaEnsureInitializedValue,
-        AGeneralSchemaInvokeValue,
-        AGeneralSchemaInvokeValueOptions,
-        AGeneralSchemaRequestDefaultValue,
-        AGeneralSchemaApiValue extends GeneralSchemaApi>
-    extends GeneralSchemaBaseCore<AGeneralSchemaEnsureInitializedValue>
-    with
-        GeneralSchemaInvokeRequestBaseCore<AGeneralSchemaInvokeValue,
-            AGeneralSchemaInvokeValueOptions> {
+abstract class GeneralSchemaClientOnly<AGeneralSchemaEnsureInitializedValue, AGeneralSchemaInvokeValue, AGeneralSchemaInvokeValueOptions, AGeneralSchemaRequestDefaultValue, AGeneralSchemaApiValue extends GeneralSchemaApi> extends GeneralSchemaBaseCore<AGeneralSchemaEnsureInitializedValue> with GeneralSchemaInvokeRequestBaseCore<AGeneralSchemaInvokeValue, AGeneralSchemaInvokeValueOptions> {
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final AGeneralSchemaRequestDefaultValue requestDefault;
 
@@ -62,17 +55,7 @@ abstract class GeneralSchemaClientOnly<
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-abstract class GeneralSchemaClient<
-        AGeneralSchemaEnsureInitializedValue,
-        AGeneralSchemaInvokeValue,
-        AGeneralSchemaInvokeValueOptions,
-        AGeneralSchemaRequestDefaultValue,
-        AGeneralSchemaDatabaseValue extends GeneralSchemaDatabase,
-        AGeneralSchemaApiValue extends GeneralSchemaApi>
-    extends GeneralSchemaBaseCore<AGeneralSchemaEnsureInitializedValue>
-    with
-        GeneralSchemaInvokeRequestBaseCore<AGeneralSchemaInvokeValue,
-            AGeneralSchemaInvokeValueOptions> {
+abstract class GeneralSchemaClient<AGeneralSchemaEnsureInitializedValue, AGeneralSchemaInvokeValue, AGeneralSchemaInvokeValueOptions, AGeneralSchemaRequestDefaultValue, AGeneralSchemaDatabaseValue extends GeneralSchemaDatabase, AGeneralSchemaApiValue extends GeneralSchemaApi> extends GeneralSchemaBaseCore<AGeneralSchemaEnsureInitializedValue> with GeneralSchemaInvokeRequestBaseCore<AGeneralSchemaInvokeValue, AGeneralSchemaInvokeValueOptions> {
   /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final AGeneralSchemaDatabaseValue generalSchemaDatabase;
 
@@ -88,4 +71,21 @@ abstract class GeneralSchemaClient<
     required this.requestDefault,
     required this.generalSchemaApi,
   });
+
+ 
+  bool _isEnsureInitialized = false;
+  @override
+  FutureOr<void> ensureInitialized({
+    required AGeneralSchemaEnsureInitializedValue generalSchemaEnsureInitialized,
+  }) async {
+    
+    if (_isEnsureInitialized) {
+      return;
+    }
+    _isEnsureInitialized = true;
+    this.generalSchemaEnsureInitialized = generalSchemaEnsureInitialized;
+    return;
+  }
+
+
 }
